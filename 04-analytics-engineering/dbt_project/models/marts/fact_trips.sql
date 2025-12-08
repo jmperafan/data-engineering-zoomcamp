@@ -41,6 +41,6 @@ select
 from {{ ref('int_trips_unioned') }} as t
 -- LEFT JOIN preserves all trips even if zone information is missing or unknown
 left join {{ ref('dim_zones') }} as pickup_zone
-    on t.pickup_location_id = pickup_zone.location_id
+    on t.pickup_location_id = pickup_zone.locationid
 left join {{ ref('dim_zones') }} as dropoff_zone
-    on t.dropoff_location_id = dropoff_zone.location_id
+    on t.dropoff_location_id = dropoff_zone.locationid
