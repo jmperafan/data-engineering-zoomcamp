@@ -122,6 +122,11 @@ Now that your dbt project is set up, let's load the taxi data into DuckDB. From 
 duckdb taxi_rides_ny.duckdb
 ```
 
+Create a folder to store the data:
+```bash
+mkdir data
+```
+
 Then execute the following SQL commands to load the data into tables:
 
 ```sql
@@ -196,7 +201,9 @@ SHOW TABLES;
 
 -- Count rows in each table
 SELECT COUNT(*) as yellow_count FROM nytaxi.yellow_tripdata;
+-- 109247536
 SELECT COUNT(*) as green_count FROM nytaxi.green_tripdata;
+-- 8035161
 
 -- Preview sample data
 SELECT * FROM nytaxi.yellow_tripdata LIMIT 5;
@@ -233,6 +240,14 @@ Streamlit is used for building interactive data applications and dashboards. You
 ```bash
 pip install streamlit
 ```
+
+Run the built-in demo app to confirm Streamlit is working correctly:
+```bash
+streamlit hello
+```
+
+This command will open an interactive demo in your browser.
+If it loads successfully, your Streamlit installation is correct.
 
 ## Additional Resources
 
